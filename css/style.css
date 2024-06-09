@@ -517,7 +517,7 @@ footer p {
     }
 }
 
-/* Dark mode 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
         --color_home: #84a9ca;
@@ -567,4 +567,4 @@ footer p {
         color: black;
     }
 
-}*/
+}

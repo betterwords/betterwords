@@ -59,9 +59,13 @@
     --color_home: #c8e3fa;
     --color_work: #91e0ff;
     --color_blog: #ff4f0f;
-    --color_contact: aquamarine;
+    --color_contact: #7fffd4;
 
-    --nav_selected: #808080;
+    --nav_selected: #00000080;
+
+    --tag_contdes: var(--color_home);
+    --tag_access: var(--color_contact);
+    --tag_language: #ffa6a6;
 
     /*Dark mode*/
     --dark_color_bg: #232323;
@@ -181,7 +185,7 @@ nav a:visited {
 
 .navselected {
     border-color: var(--nav_selected);
-    box-shadow: 1px 1px var(--color_border);
+    box-shadow: 0px 0px var(--color_border);
     transform: translate(3px,3px);
 }
 
@@ -346,9 +350,10 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #ccc;
-    background-color: #d1d1d16a;
-    padding-left: 10px;
+    border-left: 1rem solid #8a8a8a;
+    background-color: #b3b3b330;
+    padding: 1rem;
+    margin: 1rem 0rem;
 }
 
 figure img {
@@ -386,10 +391,12 @@ h1:has(+ time)
 }
 
 time{
-    display: block;
-    margin: 0 0 2rem 0;
+    display: inline-block;
 }
 
+h1 + time{
+    margin: 0 0 2rem 0;
+}
 
 /* Projects */
 #projects {
@@ -442,6 +449,7 @@ tags {
 
 a.chip {
     line-height: 1.5rem;
+    color: black;
 }
 
 a.chip:hover {
@@ -456,8 +464,10 @@ a.chip:focus {
     border-bottom: 1px solid black;
 }
 
-#tag_content_design {background-color: #fff;}
-#tag_accessibility {background-color: #fff;}
+#tag_content_design {background-color: var(--tag_contdes);}
+#tag_accessibility {background-color: var(--tag_access);}
+#tag_language {background-color: var(--tag_language);}
+
 
 /* Footer */
 footer {
@@ -525,11 +535,14 @@ footer p {
         --color_blog: #a7340a;
         --color_contact: #39b48b;
         --color_border: #696969;
-        --color_link: #a0a0a0;
-        --color_link_visited: #777777;
+        --color_link: #bebebe;
+        --color_link_visited: #989898;
         --color_link_hover: #979797;
         --font_color: #fff;
         --nav_selected: #fff;
+        --tag_language: #c35f5f;
+
+    
     }
 
     html {
@@ -566,5 +579,10 @@ footer p {
     a:focus {
         color: black;
     }
+
+    a.chip{
+        color: var(--font_color);
+    }
+   
 
 }

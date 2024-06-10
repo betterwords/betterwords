@@ -1,18 +1,13 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
-*/
 @font-face {
     font-family: "Inter Tight";
     src: local("Inter Tight");
-    src: url("fonts/InterTight-VariableFont_wght.ttf");
-    src: url("fonts/InterTight-Italic-VariableFont_wght.ttf");
+    src: url(fonts/InterTight-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: "Archivo";
     src: local("Archivo");
-    src: url("fonts/Archivo-VariableFont_wdth\,wght.ttf");
-    src: url("fonts/Archivo-Italic-VariableFont_wdth\,wght.ttf");
+    src: url(fonts/Archivo-VariableFont_wdth\,wght.ttf);
 }
 
 *,
@@ -145,7 +140,7 @@ nav a {
     line-height: 30px;
     margin: 0 0 0 .5rem;
     min-width: 5rem;
-    padding: .5rem;
+    padding: .5rem .5rem .4rem .5rem;
     width: max-content;
     text-decoration: none;
 

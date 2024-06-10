@@ -88,6 +88,8 @@
 
 html {
     color: var(--font_color);
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
 }
 
 body {
@@ -130,7 +132,7 @@ header {
 /* Navigation */
 nav {
     display: flex;
-    margin: 0 0 1rem;
+    /*   margin: 0 0 1rem;*/
 }
 
 nav a {
@@ -160,7 +162,7 @@ nav a:active {
 nav a:hover {
     position: relative;
     box-shadow: 1px 1px var(--color_border);
-    transform: translate(3px,3px);
+    transform: translate(3px, 3px);
     color: var(--font_color);
 }
 
@@ -201,7 +203,7 @@ nav a:visited {
 .navselected {
     border-color: var(--nav_selected);
     box-shadow: 0px 0px var(--color_border);
-    transform: translate(3px,3px);
+    transform: translate(3px, 3px);
 }
 
 .label {
@@ -296,7 +298,7 @@ p:has(+ ol) {
 
 
 a {
-    color: var(--color_link)
+    color: var(--color_link);
 }
 
 a:hover {
@@ -400,16 +402,15 @@ code {
     display: block;
 }
 
-h1:has(+ time)
-{
+h1:has(+ time) {
     margin-bottom: 1rem;
 }
 
-time{
+time {
     display: inline-block;
 }
 
-h1 + time{
+h1+time {
     margin: 0 0 2rem 0;
 }
 
@@ -450,7 +451,7 @@ tags {
     flex-wrap: wrap;
 }
 
-tags + h1 {
+tags+h1 {
     margin-top: 1rem;
 }
 
@@ -475,6 +476,7 @@ a.chip:hover {
     box-shadow: 0px 0px var(--color_border);
     transform: translate(1px, 1px);
 }
+
 a.chip:focus {
     position: relative;
     box-shadow: 0px 0px var(--color_border);
@@ -482,9 +484,17 @@ a.chip:focus {
     border-bottom: 1px solid black;
 }
 
-#tag_content_design {background-color: var(--tag_contdes);}
-#tag_accessibility {background-color: var(--tag_access);}
-#tag_language {background-color: var(--tag_language);}
+#tag_content_design {
+    background-color: var(--tag_contdes);
+}
+
+#tag_accessibility {
+    background-color: var(--tag_access);
+}
+
+#tag_language {
+    background-color: var(--tag_language);
+}
 
 
 /* Footer */
@@ -513,20 +523,20 @@ footer p {
 
 /* Mobile */
 @media(max-width: 600px) {
-:root {
-    --fontsize_h1: 2.75rem;
-    --fontsize_h2: 2.25rem;
-    --fontsize_h3: 1.75rem;
-    --fontsize_h4: 1.25rem;
-    --fontsize_h5: 1.125rem;
-    --fontsize_h6: 1.125rem;
-    --margin_p_h2: 3.75rem;
-    --margin_p_h3: 3.5rem;
-    --line_height_p: 1.9rem;
-    --line_height_h1: 3rem;
-    --padding_main: 1.125rem;
-    --body_padding: 1rem 1.125rem 1rem 1rem;
-}
+    :root {
+        --fontsize_h1: 2.75rem;
+        --fontsize_h2: 2.25rem;
+        --fontsize_h3: 1.75rem;
+        --fontsize_h4: 1.25rem;
+        --fontsize_h5: 1.125rem;
+        --fontsize_h6: 1.125rem;
+        --margin_p_h2: 3.75rem;
+        --margin_p_h3: 3.5rem;
+        --line_height_p: 1.9rem;
+        --line_height_h1: 3rem;
+        --padding_main: 1.125rem;
+        --body_padding: 1rem 1.125rem 1rem 1rem;
+    }
 
     body {
         margin-top: 0;
@@ -574,8 +584,6 @@ footer p {
         --font_color: #fff;
         --nav_selected: #fff;
         --tag_language: #c35f5f;
-
-    
     }
 
     html {
@@ -613,9 +621,9 @@ footer p {
         color: black;
     }
 
-    a.chip{
+    a.chip {
         color: var(--font_color);
     }
-   
+
 
 }

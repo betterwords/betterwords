@@ -71,6 +71,8 @@
     --margin_li: 0 0 .6rem;
     --margin_p_h2: 4rem;
     --margin_p_h3: 3rem;
+    --margin_header: 0 0 1rem 0;
+    --margin_main_btm: 1rem;
     --padding_main: 2rem;
 
     --color_home: #c8e3fa;
@@ -102,11 +104,10 @@ body {
     font-family: var(--font);
     font-size: var(--fontsize_base);
     font-weight: var(--font_weight);
-    margin: .5rem auto;
+    margin: .75rem auto;
     max-width: var(--body_max_width);
-    padding: var(--body_padding);
     word-wrap: break-word;
-
+    padding: 0 .75rem 0 .5rem;
 }
 
 main {
@@ -115,6 +116,7 @@ main {
     box-shadow: var(--box_shadow) var(--color_box_shadow);
     padding: var(--padding_main);
     word-break: break-word;
+    margin-bottom: var(--margin_main_btm);
 }
 
 main a:focus {
@@ -130,7 +132,7 @@ main a:focus {
 
 /* Header */
 header {
-    margin: 0 0 1rem 0;
+    margin: var(--margin_header);
 }
 
 /* Navigation */
@@ -172,6 +174,11 @@ nav a:hover {
 
 nav a:first-child {
     margin-left: 0;
+    margin-top: 0;
+}
+
+nav a:last-child {
+    margin-bottom: 0;
 }
 
 nav a:focus {
@@ -506,7 +513,6 @@ footer {
     border-radius: var(--border_radius1);
     border: var(--border_style) var(--color_border);
     box-shadow: var(--box_shadow) var(--color_box_shadow);
-    margin-top: 1rem;
     padding: 2rem;
 }
 
@@ -536,18 +542,12 @@ footer p {
         --fontsize_h6: 1.125rem;
         --margin_p_h2: 3.75rem;
         --margin_p_h3: 3.5rem;
+        --margin_header: 0 0 .8rem 0;
         --line_height_p: 1.9rem;
         --line_height_h1: 3rem;
         --padding_main: 1.125rem;
-        --body_padding: 1rem 1.125rem 1rem 1rem;
-    }
-
-    body {
-        margin-top: 0;
-    }
-
-    header {
-        margin: 0 0 2rem 0;
+        --body_padding: .5rem .725rem .85rem .5rem;
+        --margin_main_btm: .85rem;
     }
 
     #projects a {
@@ -559,13 +559,18 @@ footer p {
     }
 
     nav a {
-        margin: .5rem 0;
+        margin: 0 0 .8rem 0;
         width: 100%;
     }
 
     .cell {
         max-width: unset;
     }
+
+    footer {
+        padding: var(--padding_main);
+    }
+
 }
 
 @media(max-width: 504px) {

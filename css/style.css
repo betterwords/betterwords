@@ -48,7 +48,6 @@
 }
 
 :root {
-
     --body_max_width: 43.75rem;
 
     --font_header_weight: 600;
@@ -135,10 +134,6 @@ main {
     margin-bottom: var(--margin_main_btm);
 }
 
-main a:focus {
-    border-bottom: var(--focus_border);
-}
-
 .cell {
     max-width: 183px;
     word-wrap: break-word;
@@ -164,7 +159,7 @@ nav a {
     width: fit-content;
     text-decoration: none;
     border-bottom: 3px solid transparent;
-
+    color: var(--font_color);
 }
 
 nav a:active {
@@ -185,13 +180,16 @@ nav a:last-child {
     margin-right: 0;
 }
 
+a:focus,
 nav a:focus {
     border-bottom: var(--focus_border);
+    color: black;
+    text-decoration: none;
 }
 
 nav a,
 nav a:visited {
-    color: black;
+    color: var(--font_color);
 }
 
 #title {
@@ -307,11 +305,7 @@ a:visited {
     color: var(--color_link_visited);
 }
 
-a:focus,
-#title:focus,
-#blog:focus,
-#contact:focus,
-#work:focus {
+a:focus{
     background-color: var(--font_color_focus);
 }
 
@@ -479,6 +473,25 @@ a.chip:focus {
     color: black;
 }
 
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip:focus {
+    position: absolute;
+    width: fit-content;
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+}
+
 
 /* Footer */
 footer {
@@ -517,7 +530,7 @@ footer p {
     }
 }
 
-@media(max-width: 370px) {
+@media(max-width: 380px) {
     nav {
         flex-wrap: wrap;
     }
@@ -527,7 +540,6 @@ footer p {
         font-size: 1.5rem;
     }
 }
-
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
@@ -545,7 +557,6 @@ footer p {
     }
 
     html {
-        color: var(--font_color);
         background-color: var(--dark_color_bg);
     }
 
@@ -555,27 +566,9 @@ footer p {
         border-color: #9d9d9d3c;
     }
 
-    a {
-        color: var(--color_link)
-    }
-
-    nav a,
-    nav a:visited,
-    nav a:hover {
-        color: var(--dark_font_color);
-    }
-
-    a:hover {
-        color: var(--color_link_hover);
-        text-decoration-thickness: max(3px, .1875rem, .12em);
-    }
-
-    a:visited {
-        color: var(--color_link_visited);
-    }
-
-    nav a:focus,
-    a:focus {
+    nav a:focus, a:focus, #landing a:focus {
         color: black;
+        border-bottom: 3px solid black;
     }
+
 }

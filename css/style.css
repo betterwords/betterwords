@@ -426,8 +426,7 @@ h1+time {
 #tag_language {background-color: var(--tag_language);}
 
 tags {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline;
 }
 
 tags+h1 {
@@ -440,6 +439,7 @@ tags+h1 {
     padding: .05rem .5rem;
     font-size: var(--fontsize_chip);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 a.chip {

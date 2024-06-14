@@ -1,14 +1,16 @@
 @font-face {
     font-family: "Archivo";
     src: local("Archivo");
-    src: url(fonts/Archivo-VariableFont_wdth\,wght.ttf);
+    src: url(fonts/Archivo-VariableFont_wdth\,wght.ttf) format(truetype) tech(variations);
+    src: url(fonts/Archivo-VariableFont_wdth\,wght.ttf) format(truetype);
     font-display: swap;
+    font-weight: 100 900;
 }
 
 @font-face {
     font-family: "Atkinson Hyperlegible";
     src:local("Atkinson Hyperlegible");
-    src: url(fonts/AtkinsonHyperlegible-Regular.ttf);
+    src: url(fonts/AtkinsonHyperlegible-Regular.ttf) format(truetype);
     font-display: swap;
     font-weight: 400;
     font-style: normal;
@@ -17,7 +19,7 @@
 @font-face {
     font-family: "Atkinson Hyperlegible";
     src:local("Atkinson Hyperlegible");
-    src: url(fonts/AtkinsonHyperlegible-Bold.ttf);
+    src: url(fonts/AtkinsonHyperlegible-Bold.ttf) format(truetype);
     font-display: swap;
     font-weight: 700;
     font-style: normal;
@@ -26,7 +28,7 @@
 @font-face {
     font-family: "Atkinson Hyperlegible";
     src:local("Atkinson Hyperlegible");
-    src: url(fonts/AtkinsonHyperlegible-Italic.ttf);
+    src: url(fonts/AtkinsonHyperlegible-Italic.ttf) format(truetype);
     font-display: swap;
     font-weight: 400;
     font-style: italic;
@@ -35,7 +37,7 @@
 @font-face {
     font-family: "Atkinson Hyperlegible";
     src:local("Atkinson Hyperlegible");
-    src: url(fonts/AtkinsonHyperlegible-BoldItalic.ttf);
+    src: url(fonts/AtkinsonHyperlegible-BoldItalic.ttf) format(truetype);
     font-display: swap;
     font-weight: 700;
     font-style: italic;
@@ -77,7 +79,6 @@
     --color_link_visited: #4c2c92;
     --color_code: #d13118;
 
-/*    --line_height_p: 2rem;*/
     --line_height_p: clamp(1.6rem, 1.2631578947368423rem + 1.6842105263157892vw, 2rem);
     --line_height_h1: clamp(2.75rem, 2.1184210526315788rem + 3.1578947368421053vw, 3.5rem);
     --line_height_a_chip: clamp(1.25rem, 1.0394736842105263rem + 1.0526315789473684vw, 1.5rem);

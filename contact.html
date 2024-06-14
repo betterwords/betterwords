@@ -28,11 +28,33 @@
         <h1>Contact</h1>
         <p>Message me with the following form, or contact me on <a
                 href="https://www.linkedin.com/in/yves-plusj%C3%A9-882740212/">LinkedIn</a>.</p>
-        <section>
+  <section>
+    <form id="contactform" action="https://api.web3forms.com/submit" method="POST">
 
-        </section>
-        <section>
-            <script data-letterbirduser="betterwords" src="https://letterbird.co/embed/v1.js"></script>
+        <input type="hidden" name="access_key" value="c66935a6-6705-4200-9061-833072cab3b9
+                ">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="contact_field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="contact_field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                </div>
+            
+            <div class="contact_field">
+                <label for="message">Message</label>
+                <textarea name="message" required></textarea>
+            </div>
+    
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    
+        <button type="submit" id="contact-submit">Send email</button>
+    </div>
+    </form>
+    
         </section>
 
     </main>

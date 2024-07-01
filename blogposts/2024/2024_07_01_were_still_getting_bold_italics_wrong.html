@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better words</title>
+</head>
+
+<body>
+
+    <!-- ### HEADER ### -->
+
+    <header>
+        <a href="#main" class="skip">Skip to main content</a>
+        <nav id="navigation">
+            <a id="title" href="../../index.html">Better words</a>
+            <a id="blog" href="../../blog.html">Blog</a>
+        </nav>
+    </header>
+
+    <!-- ### CONTENT ### -->
+
+    <main id="main">
+        <article>
+
+            <tags role="content tags">
+                <a class="chip" id="tag_accessibility" href="../categories.html#cat_accessibility">Accessibility</a>
+                <a class="chip" id="tag_HTML" href="../categories.html#cat_HTML">HTML</a>
+            </tags>
+            <h1>We're still getting bold and italics wrong</h1>
+            <time date="2024-07-01">1 July, 2024</time>
+
+
+            <p>
+                I see it far too often -- on the internet, many rich text editors use <code>&lt;strong&gt;</code>
+                and <code>&lt;em&gt;</code> in place of <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> by default.
+                What many don't realise is that when it comes to semantic HTML, these aren't intended to be interchangeable and actually have different semantic
+                meaning.
+
+            </p><p>Let's go through each one.</p>
+<!--
+            <div role="summary" class="summary">
+            <p role="summary">
+                <b>Quick summary</b>
+            </p>
+            <ul>
+                <li> <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are <b>semantic</b> tags - they mark a semantic difference in words.
+                </li>
+                <li><code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> are <b>presentational</b> tags - they make text look bold and italic. This
+                    is so they're visually marked apart from other text, either for utilitarian purposes or to indicate
+                    some different form or quality of text</li>
+                <li><code>&lt;strong&gt;</code> marks text as having strong importance, and looks visually bold
+                    <div role="example" class="example">
+                        <code>&lt;strong&gt;Warning&lt;/strong&gt;: This area is dangerous. &lt;strong&gt;Avoid travelling through this area.&lt;/strong&gt;</code>
+                    </div>
+                </li>
+                </li>
+                <li><code>&lt;em&gt;</code> marks text with stress emphasis, and looks visually italic
+                    <div role="example" class="example"><code>This is &lt;em&gt;your&lt;/em&gt; one.</code>
+                </li>
+                </div>
+            </ul>
+            </li>
+            </ul></div>
+-->
+            <h2>&lt;strong&gt; and &lt;em&gt;</h2>
+            <p>I think of <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> as <b>semantic</b> tags. When they're
+                applied to some text, they add semantic meaning to the text.</p>
+            <p>By default, text in a strong tag is bolded, and text in an em tag is italicised. Keep in mind, however
+                that this can be changed with CSS.</p>
+
+
+            <h3>Using &lt;strong&gt; tags</h3>
+
+            <p>According to the HTML spec, the <code>&lt;strong&gt;</code> tag:</p>
+            <blockquote cite="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-strong-element.html">
+                represents strong importance for its contents.
+            </blockquote>
+            <p>When you apply <code>&lt;strong&gt;</code> to words, you're saying that those words are serious, important,
+            or urgent in some way.</p>
+
+            <p>The most common use would be to mark something as a warning, or important.</p>
+            <div role="example" class="example">
+                <code>&lt;strong&gt;Warning&lt;/strong&gt;: This area is dangerous. &lt;strong&gt;Avoid travelling through this area.&lt;/strong&gt;</code>
+            </div>
+
+            <div role="example" class="example">
+                <code>&lt;strong&gt;Check your answers before submitting your details.&lt;/strong&gt;</code></div>
+            <p>This means the only time you use it is to mark something as semantically important.</p>
+            <p>The HTML spec actually goes on to say:</p>
+
+            <blockquote cite="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-strong-element.html">The relative level of importance of a piece of content is given by its number of ancestor strong
+                elements; each strong element increases the importance of its contents.</blockquote>
+
+
+            <p>This means that nested <code>&lt;strong&gt;</code> tags actually increase the level of importance.</p>
+
+
+            <h3>Using &lt;em&gt; tags</h3>
+
+            <p>According to the HTML spec, the <code>&lt;em&gt;</code> tag:</p>
+
+            <blockquote cite="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-em-element.html">represents stress emphasis of its contents.</blockquote>
+            <p>When you apply <code>&lt;em&gt;</code> to words, you're adding stress emphasis to those words, changing
+                the meaning of the text. Have a look at the following example:</p>
+            <div role="example" class="example">
+                This is your one.
+            </div>
+
+            <p>The meaning of this sentence will change depending on which words are stressed:</p>
+            <ul>
+                <li><em>This</em> is your one - This one (as opposed to the other one) is yours</li>
+                <li>This <em>is</em> your one - I'm certain that this particular one is indeed yours</li>
+                <li>This is <em>your</em> one - This one (out of others) is yours in particular</li>
+                <li>This is your <em>one</em> - You only get one of these, and this is your one of these</li>
+            </ul>
+
+            <p>In this case, you'd use <code>&lt;em&gt;</code> to mark this specific stress emphasis. While
+                <code>&lt;i&gt;</code> marks these words visually, <code>&lt;em&gt;</code> marks it semantically in the
+                HTML. This means that <code>&lt;em&gt;</code> is actually a integral part of the content as it alone
+                explains this stress meaning. If for whatever reason the CSS stylesheet isn't working and therefore not
+                showing italics, the underlying HTML would still have the correct stress emphasis.</p>
+
+            <p>Similar to <code>&lt;strong&gt;</code>, the HTML spec says:</p>
+            <blockquote cite="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-em-element.html">
+                The level of emphasis that a particular piece of content has is given by its number of ancestor em
+                elements.
+            </blockquote>
+            <p>This means that you can express different levels of stress, depending on the number of
+                <code>&lt;em&gt;</code> ancestor tags there are. For example:</p>
+            <div role="example" class="example">
+                <code>&lt;em&gt;This &lt;em&gt;is&lt;/em&gt; your one!&lt;/em&gt;</code>
+            </div>
+            <p>
+                This sentence shows the speaker is certain this one is yours, and is emphatically fighting to have that
+                position heard.</p>
+
+            <h2>&lt;b&gt; and &lt;i&gt;</h2>
+
+            <p>I think of <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> as presentational tags. When applied, text
+                is visually marked apart from other text, either for utilitarian purposes or to indicate some different
+                form or quality of text.</p>
+               
+            <h3>Using &lt;b&gt; tags</h3>
+
+            <p>According to the HTML spec, the <code>&lt;b&gt;</code> tag:</p>
+            <blockquote cite="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-b-element.html"> represents a span of text to which attention is being drawn for utilitarian purposes without
+                conveying any extra importance and with no implication of an alternate voice or mood, such as key words
+                in a document abstract, product names in a review, actionable words in interactive text-driven software,
+                or an article lede. </blockquote>
+            <p>Put simply, you use <code>&lt;b&gt;</code> to make text look bold so that it's easier to use. For
+                example, you could make key words bold so they're easier to identify.</p>
+            <p>Note that this bolded text doesn't indicate alternate voice or mood, and it doesn't impart any additional meaning. 
+           </p>
+
+
+            <h3>Using &lt;i&gt; tags</h3>
+            <p>According to the HTML spec, the <code>&lt;i&gt;</code> tag:</p>
+            <blockquote cite="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-i-element.html">
+                represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a
+                manner indicating a different quality of text, such as a taxonomic designation, a technical term, an
+                idiomatic phrase from another language, a thought, or a ship name in Western texts.
+            </blockquote>
+
+            <p>The <code>&lt;i&gt;</code> tag has a lot going on, but the main purpose is to show that something is being
+            said in a different voice, mood, or manner.</p>
+            <p>You could use it to show that some text is a thought or some
+            other manner of speaking.</p>
+            <div role="example" class="example">
+                <code>&lt;i&gt;I hope this doesn't go badly&lt;/i&gt;, Ada prayed.</code>
+            </div>
+            <p>You'd also use it to mark phrases in another language, technical terms, taxonomic designations, and very
+                uniquely, for the name of ships in Western texts.</p>
+            <div role="example" class="example">
+                <code>"I'll see you later, &lt;i lang="fr"&gt;ma cherie&lt;/i&gt;," promised Wilson. Wilson quickly boarded &lt;i&gt;The Washington&lt;/i&gt;.  The future of &lt;i class="taxonomy"&gt;homo sapiens&lt;/i&gt; was relying on their work being successful. </code>
+            </div>
+
+            <p>Note that you should be using the <code>&lt;dfn&gt;</code> tag rather than <code>&lt;i&gt;</code> if
+                you're defining a term for the first time. For more information, see <a
+                    href="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-dfn-element.html#the-dfn-element"
+                    target="_blank">The dfn element - HTML5: Edition for Web Authors</a>.</p>
+         
+         
+         
+                    <h2>Effect on web accessiblilty</h2>
+            <p>My understanding is that most major screen readers don't actually signify the semantics of these tags.
+            </p>
+            <p>Why? We might find an answer in the NVDA screen reader, which signified it for a brief time. It was
+                reported as being extremely unpopular among users and resulted in a lot of complaints. They remarked
+                that <b>emphasis was over-used in the wild</b>.</p>
+            <p>When every rich text editor uses <code>&lt;strong&gt;</code> and
+                <code>&lt;em&gt;</code> as bold and italics as default, it's no wonder it's overused.</p>
+       
+            <h2>What next?</h2>
+            <p>It's a huge shame that these tags have been misused. There's an opportunity to create richer text and
+                richer meaning, but misuse has ironically made the web less accessible.</p>
+           
+           
+                <p>This problem highlights a larger issue: 
+                    Everyone can easily write online, but few know online writing conventions. So how can we ensure
+                    that the average person writing for the web is writing semantically?</p>
+    
+           
+                <p>How do we solve an issue like this? I'm not sure. If all web users and rich text editors were to tag
+                everything correctly from this point forward, we'd still have a dearth of existing content to fix.</p>
+            <p>Maybe in future we could use AI as a solution:</p>
+
+            <ul>
+                <li><b>GPTs could check and fix misused tags</b> - this doesn't solve the issue of rich text editors misusing
+                    the tags and creating even more un-semantic content.</li>
+                <li><b>We could create AI screen readers</b> - rather than relying on semantic HTML to read out a page, it
+                    could visually parse a page's text and meaning, without accessing semantic tagging at all. It would
+                    then rely on visual and textual clues to discern and signify meaning.</li>
+            </ul>
+            <p>It's all conjecture. I don't know what the future holds or how the semantic web might change. This is
+                what we have currently, and until it changes I'll continue to tag things as correctly as I can -- we owe
+                it to everyone to make the web as accessible as possible.</p>
+            <h2>Questions</h2>
+            <ul>
+                <li>Can this be solved? Should this be solved?</li>
+                <li>Do you use a screen reader? How does a lack of semantic signification affect how you experience the
+                    web?</li>
+            </ul>
+
+            <h2>Resources and evidence</h2>
+            <ul>
+                <li><a href="https://matthiasott.com/notes/screen-readers-semantics-strong-em" target="_blank">Screen
+                        Readers Don’t Convey the Semantics of STRONG and EM · Matthias Ott – User Experience
+                        Designer</a></li>
+                <li><a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/"
+                        target="_blank">Screen Readers support for text level HTML semantics - TPGi</a></li>
+            
+            <li>HTML5 spec:
+<ul>
+    <li>
+        <a href="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-b-element.html"
+                                target="_blank">4.6.17 The b element — HTML5: Edition for Web Authors</a>
+    </li>
+    <li><a href="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-i-element.html#the-i-element"
+        target="_blank">4.6.16 The i element — HTML5: Edition for Web Authors</a></li>
+    <li><a href="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-strong-element.html"
+        target="_blank">4.6.3 The strong element — HTML5: Edition for Web Authors</a></li>
+    <li><a href="https://www.w3.org/TR/2011/WD-html5-author-20110809/the-em-element.html"
+        target="_blank">4.6.2 The em element — HTML5: Edition for Web Authors</a></li>
+</ul>
+
+            </li>
+            
+                    </ul>
+        </article>
+    </main>
+    <!-- ### FOOTER ### -->
+
+    <footer>
+        <p class="small">
+            &copy; Copyright 2024, Better words
+        </p>
+        <p class="small"><a href="#top">↑ Back to top</a></p>
+    </footer>
+</body>
+
+</html>

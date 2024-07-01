@@ -34,17 +34,17 @@
                 <input type="hidden" name="access_key" value="c66935a6-6705-4200-9061-833072cab3b9">
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div class="contact_field">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" required>
+                        <label for="name" name="name">Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="contact_field">
                         <label for="email">Email</label>
-                        <input type="email" name="email" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
         
                     <div class="contact_field">
                         <label for="message">Message</label>
-                        <textarea name="message" required></textarea>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
         
                     <!-- Honeypot Spam Protection -->
@@ -53,7 +53,7 @@
                     <button type="submit" id="contact-submit">Send email</button>
         
                     <!-- Create a custom redirection url -->
-                    <input type="hidden" name="redirect" value="contact_success.html">
+                    <input type="hidden" name="redirect" value="https://betterwords.github.io/betterwords/contact_success.html">
                 </div>
             </form>
         </section>

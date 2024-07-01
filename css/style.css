@@ -59,7 +59,7 @@
     --font: 'Atkinson Hyperlegible', 'Inter', Helvetica, sans-serif;
     --fontsize_base: clamp(1rem, 0.7894736842105263rem + 1.0526315789473684vw, 1.25rem);
     --fontsize_header: 1.25rem;
-    --fontsize_label: 1rem;
+    --fontsize_label: .9rem;
     --fontsize_title: 2.25rem;
     /*Font size for portfolio labels*/
     --fontsize_h1: clamp(2.75rem, 2.1184210526315788rem + 3.1578947368421053vw, 3.5rem);
@@ -77,7 +77,8 @@
     --color_link: #1d70b8;
     --color_link_hover: #003078;
     --color_link_visited: #4c2c92;
-    --color_code: #d13118;
+    --color_code: #cd2f16;
+    --color_border: #aaa;
 
     --line_height_p: clamp(1.6rem, 1.2631578947368423rem + 1.6842105263157892vw, 2rem);
     --line_height_h1: clamp(2.75rem, 2.1184210526315788rem + 3.1578947368421053vw, 3.5rem);
@@ -105,9 +106,10 @@
     --nav_a_margin: 0 .75rem .75rem 0;
     --color_blockq: #b3b3b330;
 
-    --tag_contdes: #ff4f0fe3;
+    --tag_contdes: #ff4f0f;
     --tag_access: #7fffd4;
     --tag_language: #91e0ff;
+    --tag_HTML: #ffcb21;
 
     /*Dark mode*/
     /*--dark_color_bg: #232323;*/
@@ -362,8 +364,28 @@ blockquote {
     margin: 1rem 0rem;
 }
 
+.example {
+    border-left: 1rem solid var(--tag_language);
+    background-color: #91e0ff30;
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+.example code {
+    background-color: unset;
+    border: unset;
+}
+
+.summary {
+    padding: 1.5rem;
+    background-color: var(--color_blockq);
+    border-top: 1rem solid #7e7e7e;
+    margin: 1rem 0rem;
+}
+
 figure img {
     width: 100%;
+    padding: 1rem;
 }
 
 figcaption {
@@ -374,10 +396,13 @@ figcaption {
 code, pre {
     font-family: var(--font_monospace);
     padding: 0 3px;
-    font-size: 1rem;
+    font-size: var(--fontsize_chip);
     display: inline;
     background-color: var(--color_blockq);
     color: var(--color_code);
+    border-radius: .4rem;
+    border: .5px solid #00000005;
+    line-height: var(--line_height_a_chip);
 }
 
 pre {
@@ -401,7 +426,7 @@ h1+time {
 #projects {
     display: flex;
     flex-flow: row wrap;
-    gap: .875rem;
+    gap: 1rem;
     margin-bottom: 5.625rem;
 }
 
@@ -419,11 +444,17 @@ h1+time {
     max-width: 100%;
 }
 
+.projtitle {
+    font-weight: 600;
+}
+
 #tag_content_design {background-color: var(--tag_contdes);}
 
 #tag_accessibility {background-color: var(--tag_access);}
 
 #tag_language {background-color: var(--tag_language);}
+
+#tag_HTML {background-color: var(--tag_HTML);}
 
 tags {
     display: inline;
@@ -433,18 +464,34 @@ tags+h1 {
     margin-top: 1rem;
 }
 
-.chip {
+.chip, .chip_work, .chip_dot {
     border-radius: 1.188rem;
+    border: .5px solid #0000000c;
     margin: .2rem .5rem .2rem 0;
     padding: .05rem .5rem;
-    font-size: var(--fontsize_chip);
     text-decoration: none;
     white-space: nowrap;
+    max-width: max-content;
+}
+
+.chip {
+    font-size: var(--fontsize_chip);
+}
+
+.chip_work {
+    font-size: .8rem;
+}
+
+.chip_dot {
+    font-size: 0rem;
+    padding: .5rem;
+    vertical-align: middle;
+    margin: 0 0 0 .5rem;
 }
 
 a.chip {
     line-height: var(--line_height_a_chip);
-    color: var(--font_color);
+    color: #000;
 }
 
 a.chip:hover {
@@ -455,6 +502,11 @@ a.chip:focus {
     border: 0px;
     background-color: var(--font_color_focus) !important;
     color: black;
+}
+
+.ul {
+    border-bottom: 1px solid var(--color_border);
+    padding: .05rem 0 .3rem 0;
 }
 
 .skip {
@@ -537,6 +589,29 @@ footer p {
     box-shadow: unset !important;
 }
 
+
+/*Table*/
+table {
+    border-collapse: collapse;
+    line-height: var(--line_height_p);
+    word-break: normal;
+    margin-bottom: 2rem;
+}
+
+th, td{
+    border-bottom: 1px solid var(--color_border);
+    padding: .5rem 1rem .5rem 0;
+    text-align: left;
+}
+
+th:last-child, td:last-child {
+    padding: .5rem 0 .5rem 0;
+}
+
+article:last-child {
+    margin: 0 0 8rem 0;
+}
+
 /* Mobile */
 @media(max-width: 400px) {
     nav {
@@ -559,9 +634,7 @@ footer p {
         --color_link_hover: #979797;
         --font_color: #fff;
         --nav_selected: #ffffff80;
-        --tag_contdes: #a7340a;
-        --tag_access: #39b48b;
-        --tag_language: #4b97b5;
+        --color_code: #ffca2d;
     }
 
     html {
@@ -570,11 +643,11 @@ footer p {
 
     .info-field,
     code {
-        background-color: #575757a5;
-        border-color: #9d9d9d3c;
+        background-color: var(--color_blockq);
+        border: 1px solid #ffffff05;
     }
 
-    nav a:focus, a:focus, #landing a:focus {
+    nav a:focus, a:focus, nav a:active, #landing a:focus {
         color: black;
         border-bottom: 3px solid black;
     }

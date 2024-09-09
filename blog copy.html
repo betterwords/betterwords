@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Better words blog, covering topics on content design, technical writing, language, and culture.">
+    <title>Blog - Better words</title>
+</head>
+
+
+<style>
+input[type="radio"] {
+position: absolute;
+left: -9999px;
+}
+
+#tag_all {
+    background-color: #88888849;
+}
+
+.filters * {
+    display: inline;
+}
+
+.filters label {
+    cursor: pointer;
+}
+
+.filters label:hover{
+    text-decoration: underline;
+}
+
+[value="All"]:checked ~ .posts [data-category] {
+}
+[value="Accessibility"]:checked ~ .posts .post:not([data-category~="Accessibility"]),
+[value="Content_Design"]:checked ~ .posts .post:not([data-category~="Content_Design"]),
+[value="HTML"]:checked ~ .posts .post:not([data-category~="HTML"]),
+[value="Language"]:checked ~ .posts .post:not([data-category~="Language"]) {
+  display: none;
+  transition: display 1s ease-out;
+
+}
+
+
+[value="All"]:checked ~ .filters [for="All"],
+[value="Accessibility"]:checked ~ .filters [for="Accessibility"],
+[value="Content_Design"]:checked ~ .filters [for="Content_Design"],
+[value="HTML"]:checked ~ .filters [for="HTML"],
+[value="Language"]:checked ~ .filters [for="Language"] {
+border:2px solid black;
+}
+
+</style>
+
+<header>
+    <a href="#main" class="skip">Skip to main content</a>
+    <nav id="intro">
+        <a id="title" href="index.html">Better words</a>
+        <a id="work" href="work.html">Work</a>
+        <a class="navselected" id="blog" href="blog.html">Blog</a>
+        <a id="contact" href="contact.html">Contact</a>
+    </nav>
+
+</header>
+<body>
+
+    <main id="main">
+
+        <h1>Blog (filterrrrrrrrrrr)</h1>
+
+
+        <input type="radio" id="All" name="categories" value="All" checked>
+        <input type="radio" id="Accessibility" name="categories" value="Accessibility">
+        <input type="radio" id="Content_Design" name="categories" value="Content_Design">
+        <input type="radio" id="HTML" name="categories" value="HTML">
+        <input type="radio" id="Language" name="categories" value="Language">
+
+        <ol class="filters" style="margin:0 0 2rem 0; line-height: 2rem; padding:0;">
+
+            <li>
+                <label class="chip" id="tag_all" for="All">All</label>
+            </li>
+            <li>
+                <label class="chip" id="tag_accessibility" for="Accessibility">Accessibility</label>
+            </li>
+            <li>
+                <label class="chip" id="tag_content_design" for="Content_Design">Content Design</label>
+            </li>
+            <li>
+                <label class="chip" id="tag_HTML" for="HTML">HTML</label>
+            </li>
+            <li>
+                <label class="chip" id="tag_language" for="Language">Language</label>
+            </li>
+
+        </ol>
+
+
+
+        <ol class="posts">
+
+            <li class="post" data-category="Accessibility HTML">
+                <time datetime="2024-07-01">2024-07-01</time>: <a
+                    href="blogposts/2024/2024_07_01_were_still_getting_bold_italics_wrong.html">We're still getting bold
+                    and
+                    italics wrong</a>
+                <tags>
+                    <span class="chip_dot" style="content: '';" id="tag_accessibility"></span>
+                    <span class="chip_dot" id="tag_HTML"></span>
+                </tags>
+            </li>
+
+            <li class="post" data-category="Content_Design Language">
+                <time datetime="2024-06-10">2024-06-10</time>: <a
+                    href="blogposts/2024/2024_06_10_correctness_audience_tone.html">Correctness, audience, and tone</a>
+                <tags>
+                    <span class="chip_dot" id="tag_content_design"></span>
+                    <span class="chip_dot" id="tag_language"></span>
+                </tags>
+            </li>
+            <li class="post" data-category="Accessibility Content_Design">
+                <time datetime="2024-06-09">2024-06-09</time>: <a
+                    href="blogposts/2024/2024_06_09_meaningful_hyperlinks.html">Meaningful hyperlinks</a>
+                <tags>
+                    <span class="chip_dot" id="tag_accessibility"></span>
+                    <span class="chip_dot" id="tag_content_design"></span>
+                </tags>
+            </li>
+
+        </ol>
+
+
+
+        <!--
+            <section>
+                <h2>Weeknotes</h2>
+                <ul>
+                    <li>[Date]: <a>[Post title](Weeknote~)</a></li>
+                </ul>
+            </section>-->
+
+
+    </main>
+    <!--
+    <footer>
+        <hr>
+    </footer>
+-->
+</body>
+
+</html>

@@ -13,13 +13,26 @@
 
 
 <style>
+:root{
+--hover-border-color: black;
+--all-color:black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+--hover-border-color: #ffffffdd;
+--all-color: white;
+}
+}
+
 input[type="radio"] {
 position: absolute;
 left: -9999px;
 }
 
 #tag_all {
-    background-color: #88888849;
+    background: #a9a9a964; 
+    color: var(--all-color);
 }
 
 .filters * {
@@ -28,13 +41,21 @@ left: -9999px;
 
 .filters label {
     cursor: pointer;
+    border: 3px solid transparent;
+    color: black;
 }
+
+
 
 .filters label:hover{
     text-decoration: underline;
+    text-decoration-thickness: .1rem;
+    border:3px solid var(--hover-border-color);
 }
 
-[value="All"]:checked ~ .posts [data-category] {
+
+
+[value="All categories"]:checked ~ .posts [data-category] {
 }
 [value="Accessibility"]:checked ~ .posts .post:not([data-category~="Accessibility"]),
 [value="Content_Design"]:checked ~ .posts .post:not([data-category~="Content_Design"]),
@@ -45,14 +66,14 @@ left: -9999px;
 
 }
 
-
-[value="All"]:checked ~ .filters [for="All"],
+[value="All categories"]:checked ~ .filters [for="All categories"],
 [value="Accessibility"]:checked ~ .filters [for="Accessibility"],
 [value="Content_Design"]:checked ~ .filters [for="Content_Design"],
 [value="HTML"]:checked ~ .filters [for="HTML"],
 [value="Language"]:checked ~ .filters [for="Language"] {
-border:2px solid black;
+border:3px solid var(--hover-border-color);
 }
+
 
 </style>
 
@@ -73,7 +94,7 @@ border:2px solid black;
         <h1>Blog (filterrrrrrrrrrr)</h1>
 
 
-        <input type="radio" id="All" name="categories" value="All" checked>
+        <input type="radio" id="All categories" name="categories" value="All categories" checked>
         <input type="radio" id="Accessibility" name="categories" value="Accessibility">
         <input type="radio" id="Content_Design" name="categories" value="Content_Design">
         <input type="radio" id="HTML" name="categories" value="HTML">
@@ -82,7 +103,7 @@ border:2px solid black;
         <ol class="filters" style="margin:0 0 2rem 0; line-height: 2rem; padding:0;">
 
             <li>
-                <label class="chip" id="tag_all" for="All">All</label>
+                <label class="chip" id="tag_all" for="All categories">All categories</label>
             </li>
             <li>
                 <label class="chip" id="tag_accessibility" for="Accessibility">Accessibility</label>

@@ -140,13 +140,7 @@ main {
     margin-bottom: var(--margin_main_btm);
 }
 
-.cell {
-    min-width: 10rem;
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    gap: .313rem;
-}
+
 
 /* Header */
 header {
@@ -429,7 +423,7 @@ h1+time {
 #projects {
     display: flex;
     flex-flow: row wrap;
-    gap: 1rem;
+    gap: 1.3rem;
     margin-bottom: 5.625rem;
 }
 
@@ -449,6 +443,14 @@ h1+time {
 
 .projtitle {
     font-weight: 600;
+}
+
+.cell {
+    min-width: 10rem;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: .313rem;
 }
 
 #tag_content_design {background-color: var(--tag_contdes);}
@@ -502,7 +504,7 @@ a.chip:hover {
 }
 
 a.chip:focus {
-    border: 0px;
+    border: .5px solid #00000007;
     background-color: var(--font_color_focus) !important;
     color: black;
 }
@@ -619,6 +621,10 @@ article:last-child {
 @media(max-width: 400px) {
     nav {
         flex-wrap: wrap;
+    }
+
+    #work, #contact, #blog {
+        font-size: 1.5rem;
     }
 
     #title {

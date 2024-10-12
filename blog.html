@@ -30,11 +30,14 @@
 
         <div class="flex-container" style="flex-direction: column; gap:4rem;">
           
-            <tags style="margin:0 0 2rem 0; display:block; line-height: 2rem;">
+            <tags style="margin:0 0 2rem 0; display:block; line-height: 2rem;" aria-label="tags">
             <a class="chip" id="tag_accessibility" href="blogposts/categories.html#cat_accessibility">Accessibility</a>
             <a class="chip" id="tag_content_design" href="blogposts/categories.html#cat_content_design">Content Design</a>
             <a class="chip" id="tag_HTML" href="blogposts/categories.html#cat_HTML">HTML</a>
             <a class="chip" id="tag_language" href="blogposts/categories.html#cat_language">Language</a>
+        <!--    <a class="chip" id="tag_purple" href="blogposts/categories.html#cat_language">Purple</a>
+            <a class="chip" id="tag_sixth" href="blogposts/categories.html#cat_language">Sixth</a>
+-->
         </tags>
             <section>
               <!--  <h2>Special topics</h2>-->
@@ -42,22 +45,22 @@
                     <li>
                         <time datetime="2024-07-01">2024-07-01</time>: <a href="blogposts/2024/2024_07_01_were_still_getting_bold_italics_wrong.html">We're still getting bold and italics wrong</a>
                         <tags>
-                            <span class="chip_dot" style="content: '';" id="tag_accessibility"></span>
-                            <span class="chip_dot" id="tag_HTML"></span>
+                            <span class="chip_dot" id="tag_accessibility" aria-label="Accessibility tag"></span>
+                            <span class="chip_dot" id="tag_HTML" aria-label="HTML tag"></span>
                         </tags>
                     </li>
                     <li>
                         <time datetime="2024-06-10">2024-06-10</time>: <a href="blogposts/2024/2024_06_10_correctness_audience_tone.html" >Correctness, audience, and tone</a>
                         <tags>
-                            <span class="chip_dot" id="tag_content_design"></span>
-                            <span class="chip_dot" id="tag_language"></span>
+                            <span class="chip_dot" id="tag_content_design" aria-label="Content Design tag"></span>
+                            <span class="chip_dot" id="tag_language" aria-label="Language tag"></span>
                         </tags>
                     </li>
                     <li>
                         <time datetime="2024-06-09">2024-06-09</time>: <a href="blogposts/2024/2024_06_09_meaningful_hyperlinks.html" >Meaningful hyperlinks</a>
                         <tags>
-                            <span class="chip_dot" id="tag_accessibility"></span>
-                            <span class="chip_dot" id="tag_content_design"></span>
+                            <span class="chip_dot" id="tag_accessibility" aria-label="Accessibility tag"></span>
+                            <span class="chip_dot" id="tag_content_design" aria-label="Content Design tag"></span>
                         </tags>
                     </li>
                 </ul>
@@ -73,11 +76,13 @@
         </div>
 
     </main>
-    <!--
     <footer>
-        <hr>
+
+        <p class="small">
+            &copy; Copyright 2024, Better words
+        </p>
+        <p class="small"><a href="#top">↑ Back to top</a></p>
     </footer>
--->
 </body>
 
 </html>
